@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import "tailwindcss";
+
+
+@theme{
+    --font-Mullish: "Mulish", sans-serif;
+    --breakpoint-md-custom: 770px;
+    --breakpoint-xs-custom:{'max': '440px'};
+}
+
+@layer components{
+    body{
+        @apply box-border overflow-x-hidden p-0 m-0
+    }
+    .nav-link{
+        @apply text-white relative py-6 cursor-pointer hover:text-blue-600 hover:underline transition-all duration-200;
+    }
+
+    body button{
+        @apply cursor-pointer
+    }
+    .btn{
+        @apply text-white text-[13px] border border-white rounded font-bold cursor-pointer
+    }
+
+    .features {
+        @apply flex gap-1 font-bold;
+    }
+
+    @keyframes scrollUp {
+        0% {
+            top: 0;
+        }
+        100% {
+            top: -160%
+        }
+    }
+
+    .animate-scroll{
+        position: absolute;   /* required for top to work */
+        width: 100%;
+        animation: scrollUp 15s linear infinite;
+    }
+}
